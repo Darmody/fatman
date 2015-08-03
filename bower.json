@@ -1,0 +1,17 @@
+{
+  "name": "fatman",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Darmody/fatman",
+  "authors": [
+    "darmody <eterlf41@gmail.com>"
+  ],
+  "description": "I'm a fatman.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
