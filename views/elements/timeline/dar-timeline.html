@@ -1,10 +1,19 @@
 <link rel="import" href="/components/polymer/polymer.html" />
+<link rel="import" href="/components/iron-icons/iron-icons.html">
 <link rel="import" href="/components/paper-styles/paper-styles.html" />
 <link rel="import" href="/components/paper-drawer-panel/paper-drawer-panel.html" />
 <link rel="import" href="/components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="/elements/theme-color/theme-color.html">
 
 <dom-module id="dar-timeline">
   <style>
+    #container {
+      background: #fafafa;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 24px;
+    }
+
     #timeline-panel [main] {
       background-color: var(--google-grey-100);
       border-left: 1px solid var(--google-grey-300);
@@ -45,6 +54,144 @@
       margin: 0;
       max-width: 200px;
     }
+
+    .year-title {
+      margin: 10px 0;
+      padding: 0 16px;
+      color: rgba(0,0,0,.54);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .month-node {
+      display: block;
+      padding: 9px 16px;
+      font-weight: 500;
+      color: rgba(0,0,0,.87);
+      text-transform: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-width: 1px 0;
+    }
+
+    .month-icon {
+      display: block;
+      position: relative;
+      line-height: 34px;
+      width: 34px;
+      height: 34px;
+      background: #ccc;
+      text-align: center;
+      font-weight: 500;
+      font-size: 18px;
+      color: #606060;
+      outline: none;
+      border: 1px solid #e5e5e5;
+      margin-right: 15px;
+    }
+
+
+    .month-title h2 {
+      @apply(--paper-font-title);
+      color: #424242;
+    }
+
+    .month-title .count {
+      color: var(--paper-grey-600);
+    }
+
+    .month-title .count:before {
+      content: "(";
+    }
+
+    .month-title .count:after {
+      content: ")";
+    }
+
+    .month-title iron-icon, .month-title cart-icon {
+      cursor: pointer;
+      margin-left: 16px;
+    }
+
+    .month-title > [paper-drawer-toggle] {
+      margin: 0 16px 0 0;
+    }
+
+    #day-cards, .month-title {
+      width: 100%;
+      max-width: 920px;
+      margin: 10px auto;
+    }
+
+    [size=xs] #day-cards,
+    [size=s] #day-cards,
+    [size=m] #day-cards {
+      width: 100%;
+      margin: 0;
+    }
+
+    [size=xs] #day-cards .day-card {
+      width: 100%;
+      margin: 0 0 20px;
+    }
+
+    [size=s] #day-cards .day-card {
+      width: calc(50% - 20px);
+    }
+
+    .day-card {
+      display: block;
+      width: calc(30% - 20px);
+      min-width: 220px;
+      margin: 10px;
+      cursor: pointer;
+      transition: box-shadow 0.1s;
+      background: white;
+      border-radius: 3px;
+      border: 1px solid #e5e5e5;
+    }
+
+    .date-title {
+      height: 60px;
+      display: block;
+      position: relative;
+    }
+
+    .date-title span {
+      margin-right: 15px;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .date-title h4 {
+      margin-left: 15px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .calendar-icon {
+      margin-left: 15px;
+    }
+
+    .date-cover {
+      position: relative;
+      border-bottom: 1px solid;
+      border-color: #e0e0e0;
+    }
+
+    .cover-img {
+      padding: 2px;
+      box-sizing: border-box;
+      margin: 6px;
+      width: calc(100% - 12px);
+      height: auto;
+    }
+
+    .date-data {
+      border-bottom: 1px solid;
+      border-color: #e0e0e0;
+      height: 100px;
+    }
   </style>
 
   <template>
@@ -58,9 +205,339 @@
             <h1 class="name">Darmody</h1>
           </div>
         </paper-toolbar>
-        <div> Drawer content... </div>
+        <div class="coordinates">
+          <h5 class="year-title">2015</h5>
+          <nav class="months-nav">
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#cde6c7">
+                    <div themed class="fit">
+                      <span>
+                        Ja
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>January</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#84bf96">
+                    <div themed class="fit">
+                      <span>
+                        Fe
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>February</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#81c784">
+                    <div themed class="fit">
+                      <span>
+                        Mr
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>March</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#45b97c">
+                    <div themed class="fit">
+                      <span>
+                        Ap
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>April</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#b2d235">
+                    <div themed class="fit">
+                      <span>
+                        Ma
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>May</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#cbc547">
+                    <div themed class="fit">
+                      <span>
+                        Ju
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>June</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#decb00">
+                    <div themed class="fit">
+                      <span>
+                        Jl
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>July</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#ffd400">
+                    <div themed class="fit">
+                      <span>
+                        Au
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>August</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#ffc20e">
+                    <div themed class="fit">
+                      <span>
+                        Sp
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>September</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#afdfe4">
+                    <div themed class="fit">
+                      <span>
+                        Ot
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>October</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#00a6ac">
+                    <div themed class="fit">
+                      <span>
+                        No
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>November</span>
+              </div>
+            </a>
+            <a class="month-node">
+              <div class="layout horizontal center">
+                <div class="month-icon">
+                  <theme-color color="#145b7d">
+                    <div themed class="fit">
+                      <span>
+                        De
+                      </span>
+                    </div>
+                  </theme-color>
+                </div>
+                <span>December</span>
+              </div>
+            </a>
+          </div>
+        </div>
       </paper-header-panel>
-      <div main></div>
+      <div id="container" class="fit" main>
+        <div class="month-title horizontal layout center">
+          <iron-icon icon="menu" paper-drawer-toggle></iron-icon>
+          <h2 class="flex">
+            <span>January</span> <span class="count">15</span>
+          </h2>
+        </div>
+        <div id="day-cards" class="horizontal layout wrap">
+          <div class="day-card layout vertical">
+            <div class="date-title">
+              <theme-color color="#cde6c7">
+                <div themed class="fit horizontal layout center">
+                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
+                  <h4 class="flex"> 01 Mon </h4>
+                  <span> 20:45 </span>
+                </div>
+              </theme-color>
+            </div>
+            <div class="date-cover">
+              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
+            </div>
+            <div class="layout horizontal center">
+              <div class="month-icon">
+                <theme-color color="#145b7d">
+                  <div themed class="fit">
+                    <span>
+                      De
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>December</span>
+            </div>
+          </div>
+          <div class="day-card layout vertical">
+            <div class="date-title">
+              <theme-color color="#cde6c7">
+                <div themed class="fit horizontal layout center">
+                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
+                  <h4 class="flex"> 02 Tue </h4>
+                  <span> 20:45 </span>
+                </div>
+              </theme-color>
+            </div>
+            <div class="date-cover">
+              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
+            </div>
+            <div class="layout horizontal center">
+              <div class="month-icon">
+                <theme-color color="#145b7d">
+                  <div themed class="fit">
+                    <span>
+                      De
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>December</span>
+            </div>
+          </div>
+          <div class="day-card layout vertical">
+            <div class="date-title">
+              <theme-color color="#cde6c7">
+                <div themed class="fit horizontal layout center">
+                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
+                  <h4 class="flex"> 03 Wed </h4>
+                  <span> 20:45 </span>
+                </div>
+              </theme-color>
+            </div>
+            <div class="date-cover">
+              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
+            </div>
+            <div class="layout horizontal center">
+              <div class="month-icon">
+                <theme-color color="#145b7d">
+                  <div themed class="fit">
+                    <span>
+                      De
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>December</span>
+            </div>
+          </div>
+          <div class="day-card layout vertical">
+            <div class="date-title">
+              <theme-color color="#cde6c7">
+                <div themed class="fit horizontal layout center">
+                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
+                  <h4 class="flex"> 04 Thu </h4>
+                  <span> 20:45 </span>
+                </div>
+              </theme-color>
+            </div>
+            <div class="date-cover">
+              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
+            </div>
+            <div class="layout horizontal center">
+              <div class="month-icon">
+                <theme-color color="#145b7d">
+                  <div themed class="fit">
+                    <span>
+                      De
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>December</span>
+            </div>
+          </div>
+          <div class="day-card layout vertical">
+            <div class="date-title">
+              <theme-color color="#cde6c7">
+                <div themed class="fit horizontal layout center">
+                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
+                  <h4 class="flex"> 05 Fri </h4>
+                  <span> 20:45 </span>
+                </div>
+              </theme-color>
+            </div>
+            <div class="date-cover">
+              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
+            </div>
+            <div class="date-data">其他</div>
+          </div>
+          <div class="day-card layout vertical">
+            <div class="date-title">
+              <theme-color color="#cde6c7">
+                <div themed class="fit horizontal layout center">
+                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
+                  <h4 class="flex"> 06 Sat </h4>
+                  <span> 20:45 </span>
+                </div>
+              </theme-color>
+            </div>
+            <div class="date-cover">
+              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
+            </div>
+            <div class="date-data">其他</div>
+          </div>
+          <div class="day-card layout vertical">
+            <div class="date-title">
+              <theme-color color="#cde6c7">
+                <div themed class="fit horizontal layout center">
+                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
+                  <h4 class="flex"> 07 Sun </h4>
+                  <span> 20:45 </span>
+                </div>
+              </theme-color>
+            </div>
+            <div class="date-cover">
+              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
+            </div>
+            <div class="date-data">其他</div>
+          </div>
+        </div>
+      </div>
     </paper-drawer-panel>
   </template>
 
