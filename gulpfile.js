@@ -7,6 +7,8 @@ function clean() {
 };
 
 var publ1c = function(){
+  gulp.src('./app/elements/**')
+    .pipe(gulp.dest('./public/elements/'));
   gulp.src('./views/elements/**')
     .pipe(gulp.dest('./public/elements/'));
   gulp.src('./bower_components/**')

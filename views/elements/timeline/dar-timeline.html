@@ -1,5 +1,6 @@
 <link rel="import" href="/components/polymer/polymer.html" />
 <link rel="import" href="/components/iron-icons/iron-icons.html">
+<link rel="import" href="/components/paper-input/paper-input.html">
 <link rel="import" href="/components/paper-styles/paper-styles.html" />
 <link rel="import" href="/components/paper-drawer-panel/paper-drawer-panel.html" />
 <link rel="import" href="/components/paper-toolbar/paper-toolbar.html">
@@ -7,6 +8,10 @@
 
 <dom-module id="dar-timeline">
   <style>
+    .star-icon {
+      color: #ef4136;
+    }
+
     #container {
       background: #fafafa;
       overflow: auto;
@@ -141,8 +146,8 @@
 
     .day-card {
       display: block;
-      width: calc(30% - 20px);
-      min-width: 220px;
+      width: calc(25% - 30px);
+      min-width: 200px;
       margin: 10px;
       cursor: pointer;
       transition: box-shadow 0.1s;
@@ -190,7 +195,9 @@
     .date-data {
       border-bottom: 1px solid;
       border-color: #e0e0e0;
-      height: 100px;
+      padding: 10px 16px;
+      font-weight: 500;
+      font-size: 12px;
     }
   </style>
 
@@ -400,17 +407,29 @@
             <div class="date-cover">
               <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
             </div>
-            <div class="layout horizontal center">
+            <div class="layout horizontal center date-data">
               <div class="month-icon">
-                <theme-color color="#145b7d">
+                <theme-color color="#fff">
                   <div themed class="fit">
                     <span>
-                      De
+                      Km
                     </span>
                   </div>
                 </theme-color>
               </div>
-              <span>December</span>
+              <span>跑步距离6公里。</span>
+            </div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Ca
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>消耗560卡路里。</span>
             </div>
           </div>
           <div class="day-card layout vertical">
@@ -426,17 +445,29 @@
             <div class="date-cover">
               <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
             </div>
-            <div class="layout horizontal center">
+            <div class="layout horizontal center date-data">
               <div class="month-icon">
-                <theme-color color="#145b7d">
+                <theme-color color="#fff">
                   <div themed class="fit">
                     <span>
-                      De
+                      Km
                     </span>
                   </div>
                 </theme-color>
               </div>
-              <span>December</span>
+              <span>跑步距离6公里。</span>
+            </div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Ca
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>消耗560卡路里。</span>
             </div>
           </div>
           <div class="day-card layout vertical">
@@ -452,17 +483,29 @@
             <div class="date-cover">
               <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
             </div>
-            <div class="layout horizontal center">
+            <div class="layout horizontal center date-data">
               <div class="month-icon">
-                <theme-color color="#145b7d">
+                <theme-color color="#fff">
                   <div themed class="fit">
                     <span>
-                      De
+                      Km
                     </span>
                   </div>
                 </theme-color>
               </div>
-              <span>December</span>
+              <span>跑步距离6公里。</span>
+            </div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Ca
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>消耗560卡路里。</span>
             </div>
           </div>
           <div class="day-card layout vertical">
@@ -478,17 +521,29 @@
             <div class="date-cover">
               <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
             </div>
-            <div class="layout horizontal center">
+            <div class="layout horizontal center date-data">
               <div class="month-icon">
-                <theme-color color="#145b7d">
+                <theme-color color="#fff">
                   <div themed class="fit">
                     <span>
-                      De
+                      Km
                     </span>
                   </div>
                 </theme-color>
               </div>
-              <span>December</span>
+              <span>跑步距离6公里。</span>
+            </div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Ca
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>消耗560卡路里。</span>
             </div>
           </div>
           <div class="day-card layout vertical">
@@ -504,7 +559,30 @@
             <div class="date-cover">
               <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
             </div>
-            <div class="date-data">其他</div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Km
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>跑步距离6公里。</span>
+            </div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Ca
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>消耗560卡路里。</span>
+            </div>
           </div>
           <div class="day-card layout vertical">
             <div class="date-title">
@@ -519,7 +597,30 @@
             <div class="date-cover">
               <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
             </div>
-            <div class="date-data">其他</div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Km
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>跑步距离6公里。</span>
+            </div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Ca
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>消耗560卡路里。</span>
+            </div>
           </div>
           <div class="day-card layout vertical">
             <div class="date-title">
@@ -534,7 +635,42 @@
             <div class="date-cover">
               <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
             </div>
-            <div class="date-data">其他</div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Kg
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>运动后体重85千克。</span><span> - 0.4 </span>
+            </div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Km
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>跑步距离6公里。</span><span> 6'40'' / 每公里</span>
+            </div>
+            <div class="layout horizontal center date-data">
+              <div class="month-icon">
+                <theme-color color="#fff">
+                  <div themed class="fit">
+                    <span>
+                      Ca
+                    </span>
+                  </div>
+                </theme-color>
+              </div>
+              <span>消耗560卡路里。</span>
+            </div>
           </div>
         </div>
       </div>
@@ -545,6 +681,13 @@
     Polymer({
       is: "dar-timeline"
     });
+
+    var openAddNode = function(e){
+      var dialog = document.getElementById("add-node");
+      if(dialog) {
+        dialog.open();
+      };
+    };
   </script>
 
 </dom-module>
