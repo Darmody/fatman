@@ -5,6 +5,7 @@
 <link rel="import" href="/components/paper-toolbar/paper-toolbar.html">
 <link rel="import" href="/elements/theme-color/theme-color.html">
 <link rel="import" href="/elements/cap-header/cap-header.html">
+<link rel="import" href="/elements/month-node/month-node.html">
 
 <dom-module id="dar-timeline">
   <style>
@@ -215,12 +216,7 @@
         <div class="coordinates">
           <h5 class="year-title">2015</h5>
           <nav class="months-nav">
-            <a class="month-node">
-              <div class="layout horizontal center">
-                <cap-header text="Ja" color="#cde6c7" ></cap-header>
-                <span>January</span>
-              </div>
-            </a>
+            <month-node month="January" abbrMonth="Ja" color="#cde6c7"></month-node>
             <a class="month-node">
               <div class="layout horizontal center">
                 <cap-header text="Fe" color="#84bf96" ></cap-header>
