@@ -1,10 +1,10 @@
 <link rel="import" href="/components/polymer/polymer.html" />
 <link rel="import" href="/components/iron-icons/iron-icons.html">
-<link rel="import" href="/components/paper-input/paper-input.html">
 <link rel="import" href="/components/paper-styles/paper-styles.html" />
 <link rel="import" href="/components/paper-drawer-panel/paper-drawer-panel.html" />
 <link rel="import" href="/components/paper-toolbar/paper-toolbar.html">
 <link rel="import" href="/elements/theme-color/theme-color.html">
+<link rel="import" href="/elements/cap-header/cap-header.html">
 
 <dom-module id="dar-timeline">
   <style>
@@ -217,169 +217,73 @@
           <nav class="months-nav">
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#cde6c7">
-                    <div themed class="fit">
-                      <span>
-                        Ja
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="Ja" color="#cde6c7" ></cap-header>
                 <span>January</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#84bf96">
-                    <div themed class="fit">
-                      <span>
-                        Fe
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="Fe" color="#84bf96" ></cap-header>
                 <span>February</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#81c784">
-                    <div themed class="fit">
-                      <span>
-                        Mr
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="Mr" color="#81c784" ></cap-header>
                 <span>March</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#45b97c">
-                    <div themed class="fit">
-                      <span>
-                        Ap
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="Ap" color="#45b97c" ></cap-header>
                 <span>April</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#b2d235">
-                    <div themed class="fit">
-                      <span>
-                        Ma
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="Ma" color="#b2d235" ></cap-header>
                 <span>May</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#cbc547">
-                    <div themed class="fit">
-                      <span>
-                        Ju
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="Ju" color="#cbc547" ></cap-header>
                 <span>June</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#decb00">
-                    <div themed class="fit">
-                      <span>
-                        Jl
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="Jl" color="#decb00" ></cap-header>
                 <span>July</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#ffd400">
-                    <div themed class="fit">
-                      <span>
-                        Au
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="Au" color="#ffd400" ></cap-header>
                 <span>August</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#ffc20e">
-                    <div themed class="fit">
-                      <span>
-                        Sp
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="Sp" color="#ffc20e" ></cap-header>
                 <span>September</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#afdfe4">
-                    <div themed class="fit">
-                      <span>
-                        Ot
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="Ot" color="#afdfe4" ></cap-header>
                 <span>October</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#00a6ac">
-                    <div themed class="fit">
-                      <span>
-                        No
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="No" color="#00a6ac" ></cap-header>
                 <span>November</span>
               </div>
             </a>
             <a class="month-node">
               <div class="layout horizontal center">
-                <div class="month-icon">
-                  <theme-color color="#145b7d">
-                    <div themed class="fit">
-                      <span>
-                        De
-                      </span>
-                    </div>
-                  </theme-color>
-                </div>
+                <cap-header text="De" color="#145b7d" ></cap-header>
                 <span>December</span>
               </div>
             </a>
@@ -681,13 +585,6 @@
     Polymer({
       is: "dar-timeline"
     });
-
-    var openAddNode = function(e){
-      var dialog = document.getElementById("add-node");
-      if(dialog) {
-        dialog.open();
-      };
-    };
   </script>
 
 </dom-module>

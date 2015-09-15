@@ -1,0 +1,42 @@
+<link rel="import" href="/components/polymer/polymer.html" />
+<link rel="import" href="/components/paper-styles/paper-styles.html" />
+<link rel="import" href="/elements/theme-color/theme-color.html">
+
+<dom-module id="cap-header">
+  <style>
+    :host {
+      display: block;
+      position: relative;
+      line-height: 34px;
+      width: 34px;
+      height: 34px;
+      background: #ccc;
+      text-align: center;
+      font-weight: 500;
+      font-size: 18px;
+      color: #606060;
+      outline: none;
+      border: 1px solid #e5e5e5;
+      margin-right: 15px;
+}
+
+  </style>
+
+  <template>
+    <theme-color color={{color}}>
+      <div themed class="fit">
+        <span>{{text}}</span>
+      </div>
+    </theme-color>
+  </template>
+
+  <script>
+    Polymer({
+      is: "cap-header",
+      properties: {
+        text: String,
+        color: String
+      }
+    });
+  </script>
+</dom-module>
