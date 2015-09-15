@@ -19,7 +19,7 @@
   <template>
     <a>
       <div class="layout horizontal center">
-        <cap-header text="{{abbrMonth}}" color="{{color}}" ></cap-header>
+        <cap-header text="{{monthAbbr}}" color="{{color}}" ></cap-header>
         <span>{{month}}</span>
       </div>
     </a>
@@ -30,7 +30,7 @@
       is: "month-node",
       properties: {
         month: String,
-        abbrmonth: String,
+        monthAbbr: String,
         color: String
       }
     });
