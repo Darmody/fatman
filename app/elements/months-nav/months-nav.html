@@ -1,0 +1,42 @@
+<link rel="import" href="/components/polymer/polymer.html" />
+<link rel="import" href="/components/paper-styles/paper-styles.html" />
+<link rel="import" href="/elements/month-node/month-node.html" />
+
+<dom-module id="months-nav">
+  <style>
+    .year-title {
+      margin: 10px 0;
+      padding: 0 16px;
+      color: rgba(0,0,0,.54);
+      font-size: 14px;
+      font-weight: 500;
+    }
+  </style>
+
+  <template>
+    <h5 class="year-title">[[year]]</h5>
+      <nav>
+        <month-node month="January" month-abbr="Ja" color="#cde6c7"></month-node>
+        <month-node month="February" month-abbr="Fe" color="#84bf96"></month-node>
+        <month-node month="March" month-abbr="Mr" color="#81c784"></month-node>
+        <month-node month="April" month-abbr="Ap" color="#45b97c"></month-node>
+        <month-node month="May" month-abbr="Ma" color="#b2d235"></month-node>
+        <month-node month="June" month-abbr="Ju" color="#cbc547"></month-node>
+        <month-node month="July" month-abbr="Jl" color="#decb00"></month-node>
+        <month-node month="August" month-abbr="Au" color="#ffd400"></month-node>
+        <month-node month="September" month-abbr="Sp" color="#ffc20e"></month-node>
+        <month-node month="October" month-abbr="Ot" color="#afdfe4"></month-node>
+        <month-node month="November" month-abbr="No" color="#00a6ac"></month-node>
+        <month-node month="December" month-abbr="De" color="#145b7d"></month-node>
+      </nav>
+  </template>
+
+  <script>
+    Polymer({
+      is: "months-nav",
+      properties: {
+        year: String
+      }
+    });
+  </script>
+</dom-module>

@@ -2,10 +2,11 @@
 <link rel="import" href="/components/iron-icons/iron-icons.html">
 <link rel="import" href="/components/paper-styles/paper-styles.html" />
 <link rel="import" href="/components/paper-drawer-panel/paper-drawer-panel.html" />
+<link rel="import" href="/components/paper-scroll-header-panel/paper-scroll-header-panel.html" />
 <link rel="import" href="/components/paper-toolbar/paper-toolbar.html">
 <link rel="import" href="/elements/theme-color/theme-color.html">
 <link rel="import" href="/elements/cap-header/cap-header.html">
-<link rel="import" href="/elements/month-node/month-node.html">
+<link rel="import" href="/elements/months-nav/months-nav.html">
 
 <dom-module id="dar-timeline">
   <style>
@@ -193,8 +194,8 @@
 
   <template>
     <paper-drawer-panel id="timeline-panel">
-      <paper-header-panel drawer>
-        <paper-toolbar drawer>
+      <paper-scroll-header-panel drawer>
+        <paper-toolbar>
           <div class="header-card horizontal layout center">
             <div>
               <img class="avatar" src="/images/darmody.jpg" width="36" alt="Darmody">
@@ -202,24 +203,8 @@
             <h1 class="name">Darmody</h1>
           </div>
         </paper-toolbar>
-        <div class="coordinates">
-          <h5 class="year-title">2015</h5>
-          <nav class="months-nav">
-            <month-node month="January" month-abbr="Ja" color="#cde6c7"></month-node>
-            <month-node month="February" month-abbr="Fe" color="#84bf96"></month-node>
-            <month-node month="March" month-abbr="Mr" color="#81c784"></month-node>
-            <month-node month="April" month-abbr="Ap" color="#45b97c"></month-node>
-            <month-node month="May" month-abbr="Ma" color="#b2d235"></month-node>
-            <month-node month="June" month-abbr="Ju" color="#cbc547"></month-node>
-            <month-node month="July" month-abbr="Jl" color="#decb00"></month-node>
-            <month-node month="August" month-abbr="Au" color="#ffd400"></month-node>
-            <month-node month="September" month-abbr="Sp" color="#ffc20e"></month-node>
-            <month-node month="October" month-abbr="Ot" color="#afdfe4"></month-node>
-            <month-node month="November" month-abbr="No" color="#00a6ac"></month-node>
-            <month-node month="December" month-abbr="De" color="#145b7d"></month-node>
-          </div>
-        </div>
-      </paper-header-panel>
+        <months-nav year="2015"></months-nav>
+      </paper-scroll-header-panel>
       <div id="container" class="fit" main>
         <div class="month-title horizontal layout center">
           <iron-icon icon="menu" paper-drawer-toggle></iron-icon>

@@ -19,6 +19,7 @@
     "paper-dialog": "PolymerElements/paper-dialog#~1.0.1",
     "paper-drawer-panel": "PolymerElements/paper-drawer-panel#~1.0.3",
     "paper-input": "PolymerElements/paper-input#~1.0.13",
+    "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#~1.0.8",
     "paper-styles": "PolymerElements/paper-styles#~1.0.11",
     "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.4",
     "polymer": "Polymer/polymer#^1.0.0"
