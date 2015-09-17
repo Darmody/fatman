@@ -1,0 +1,117 @@
+<link rel="import" href="/components/polymer/polymer.html" />
+<link rel="import" href="/components/paper-styles/paper-styles.html" />
+<link rel="import" href="/components/iron-icons/iron-icons.html" />
+<link rel="import" href="/elements/cap-header/cap-header.html" />
+<link rel="import" href="/elements/theme-color/theme-color.html" />
+
+<dom-module id="day-card">
+  <style>
+
+    [size=xs] :host {
+      width: 100%;
+      margin: 0 0 20px;
+    }
+
+    [size=s] :host {
+      width: calc(50% - 20px);
+    }
+
+    :host {
+      display: block;
+      width: calc(25% - 30px);
+      min-width: 200px;
+      margin: 10px;
+      cursor: pointer;
+      transition: box-shadow 0.1s;
+      background: white;
+      border-radius: 3px;
+      border: 1px solid #e5e5e5;
+    }
+
+    .date-title {
+      height: 60px;
+      display: block;
+      position: relative;
+    }
+
+    .date-title span {
+      margin-right: 15px;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .date-title h4 {
+      margin-left: 15px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .calendar-icon {
+      margin-left: 15px;
+    }
+
+    .date-cover {
+      position: relative;
+      border-bottom: 1px solid;
+      border-color: #e0e0e0;
+    }
+
+    .cover-img {
+      padding: 2px;
+      box-sizing: border-box;
+      margin: 6px;
+      width: calc(100% - 12px);
+      height: auto;
+    }
+
+    .date-data {
+      border-bottom: 1px solid;
+      border-color: #e0e0e0;
+      padding: 10px 16px;
+      font-weight: 500;
+      font-size: 12px;
+    }
+  </style>
+
+  <template>
+    <div class="layout vertical">
+      <div class="date-title">
+        <theme-color color="#cde6c7">
+          <div themed class="fit horizontal layout center">
+            <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
+            <h4 class="flex">[[dateTitle(date)]]</h4>
+            <span> 20:45 </span>
+          </div>
+        </theme-color>
+      </div>
+      <div class="date-cover">
+        <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
+      </div>
+      <div class="layout horizontal center date-data">
+        <div class="month-icon">
+          <cap-header text="Km" color="#fff" ></cap-header>
+        </div>
+        <span>跑步距离6公里。</span>
+      </div>
+      <div class="layout horizontal center date-data">
+        <div class="month-icon">
+          <cap-header text="Ca" color="#fff" ></cap-header>
+        </div>
+        <span>消耗560卡路里。</span>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: "day-card",
+      properties: {
+        date: Object
+      },
+
+      dateTitle: function(date) {
+        return date.day + " " + date.weekAbbr + " ";
+      }
+    });
+  </script>
+</dom-module>

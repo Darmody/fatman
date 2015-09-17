@@ -1,19 +1,15 @@
 <link rel="import" href="/components/polymer/polymer.html" />
-<link rel="import" href="/components/iron-icons/iron-icons.html">
+<link rel="import" href="/components/iron-icons/iron-icons.html" />
 <link rel="import" href="/components/paper-styles/paper-styles.html" />
 <link rel="import" href="/components/paper-drawer-panel/paper-drawer-panel.html" />
 <link rel="import" href="/components/paper-scroll-header-panel/paper-scroll-header-panel.html" />
-<link rel="import" href="/components/paper-toolbar/paper-toolbar.html">
-<link rel="import" href="/elements/theme-color/theme-color.html">
-<link rel="import" href="/elements/cap-header/cap-header.html">
-<link rel="import" href="/elements/months-nav/months-nav.html">
+<link rel="import" href="/elements/cap-header/cap-header.html" />
+<link rel="import" href="/elements/months-nav/months-nav.html" />
+<link rel="import" href="/elements/profile-card/profile-card.html" />
+<link rel="import" href="/elements/day-card/day-card.html" />
 
 <dom-module id="dar-timeline">
   <style>
-    .star-icon {
-      color: #ef4136;
-    }
-
     #container {
       background: #fafafa;
       overflow: auto;
@@ -25,67 +21,6 @@
       background-color: var(--google-grey-100);
       border-left: 1px solid var(--google-grey-300);
     }
-
-    paper-toolbar {
-      position: relative;
-      height: 64px;
-      padding: 0 16px;
-      background: white;
-      color: #424242;
-      border-bottom: 1px solid;
-      border-bottom-color: #e0e0e0;
-      box-sizing: border-box;
-    }
-
-    .header-card {
-      font-size: var(--app-logo-font-size);
-      max-width: 125px;
-      color: var(--app-logo-color);
-      text-transform: none;
-      text-decoration: none;
-    }
-
-    .avatar {
-      min-width: 40px;
-      padding: 2px;
-      box-sizing: border-box;
-      margin: 6px;
-      border-radius: 50%;
-    }
-
-    .name {
-      font-size: 18px;
-      padding: 0 0 0 16px;
-      font-weight: 500;
-      color: #606060;
-      margin: 0;
-      max-width: 200px;
-    }
-
-    .year-title {
-      margin: 10px 0;
-      padding: 0 16px;
-      color: rgba(0,0,0,.54);
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .month-icon {
-      display: block;
-      position: relative;
-      line-height: 34px;
-      width: 34px;
-      height: 34px;
-      background: #ccc;
-      text-align: center;
-      font-weight: 500;
-      font-size: 18px;
-      color: #606060;
-      outline: none;
-      border: 1px solid #e5e5e5;
-      margin-right: 15px;
-    }
-
 
     .month-title h2 {
       @apply(--paper-font-title);
@@ -134,75 +69,12 @@
     [size=s] #day-cards .day-card {
       width: calc(50% - 20px);
     }
-
-    .day-card {
-      display: block;
-      width: calc(25% - 30px);
-      min-width: 200px;
-      margin: 10px;
-      cursor: pointer;
-      transition: box-shadow 0.1s;
-      background: white;
-      border-radius: 3px;
-      border: 1px solid #e5e5e5;
-    }
-
-    .date-title {
-      height: 60px;
-      display: block;
-      position: relative;
-    }
-
-    .date-title span {
-      margin-right: 15px;
-      font-size: 12px;
-      font-weight: 400;
-    }
-
-    .date-title h4 {
-      margin-left: 15px;
-      font-size: 16px;
-      font-weight: 500;
-    }
-
-    .calendar-icon {
-      margin-left: 15px;
-    }
-
-    .date-cover {
-      position: relative;
-      border-bottom: 1px solid;
-      border-color: #e0e0e0;
-    }
-
-    .cover-img {
-      padding: 2px;
-      box-sizing: border-box;
-      margin: 6px;
-      width: calc(100% - 12px);
-      height: auto;
-    }
-
-    .date-data {
-      border-bottom: 1px solid;
-      border-color: #e0e0e0;
-      padding: 10px 16px;
-      font-weight: 500;
-      font-size: 12px;
-    }
   </style>
 
   <template>
     <paper-drawer-panel id="timeline-panel">
       <paper-scroll-header-panel drawer>
-        <paper-toolbar>
-          <div class="header-card horizontal layout center">
-            <div>
-              <img class="avatar" src="/images/darmody.jpg" width="36" alt="Darmody">
-            </div>
-            <h1 class="name">Darmody</h1>
-          </div>
-        </paper-toolbar>
+        <profile-card class="flex" avatar="Darmody.jpg" name="Darmody" ></profile-card>
         <months-nav year="2015"></months-nav>
       </paper-scroll-header-panel>
       <div id="container" class="fit" main>
@@ -213,284 +85,9 @@
           </h2>
         </div>
         <div id="day-cards" class="horizontal layout wrap">
-          <div class="day-card layout vertical">
-            <div class="date-title">
-              <theme-color color="#cde6c7">
-                <div themed class="fit horizontal layout center">
-                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
-                  <h4 class="flex"> 01 Mon </h4>
-                  <span> 20:45 </span>
-                </div>
-              </theme-color>
-            </div>
-            <div class="date-cover">
-              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Km
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>跑步距离6公里。</span>
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Ca
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>消耗560卡路里。</span>
-            </div>
-          </div>
-          <div class="day-card layout vertical">
-            <div class="date-title">
-              <theme-color color="#cde6c7">
-                <div themed class="fit horizontal layout center">
-                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
-                  <h4 class="flex"> 02 Tue </h4>
-                  <span> 20:45 </span>
-                </div>
-              </theme-color>
-            </div>
-            <div class="date-cover">
-              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Km
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>跑步距离6公里。</span>
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Ca
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>消耗560卡路里。</span>
-            </div>
-          </div>
-          <div class="day-card layout vertical">
-            <div class="date-title">
-              <theme-color color="#cde6c7">
-                <div themed class="fit horizontal layout center">
-                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
-                  <h4 class="flex"> 03 Wed </h4>
-                  <span> 20:45 </span>
-                </div>
-              </theme-color>
-            </div>
-            <div class="date-cover">
-              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Km
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>跑步距离6公里。</span>
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Ca
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>消耗560卡路里。</span>
-            </div>
-          </div>
-          <div class="day-card layout vertical">
-            <div class="date-title">
-              <theme-color color="#cde6c7">
-                <div themed class="fit horizontal layout center">
-                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
-                  <h4 class="flex"> 04 Thu </h4>
-                  <span> 20:45 </span>
-                </div>
-              </theme-color>
-            </div>
-            <div class="date-cover">
-              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Km
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>跑步距离6公里。</span>
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Ca
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>消耗560卡路里。</span>
-            </div>
-          </div>
-          <div class="day-card layout vertical">
-            <div class="date-title">
-              <theme-color color="#cde6c7">
-                <div themed class="fit horizontal layout center">
-                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
-                  <h4 class="flex"> 05 Fri </h4>
-                  <span> 20:45 </span>
-                </div>
-              </theme-color>
-            </div>
-            <div class="date-cover">
-              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Km
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>跑步距离6公里。</span>
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Ca
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>消耗560卡路里。</span>
-            </div>
-          </div>
-          <div class="day-card layout vertical">
-            <div class="date-title">
-              <theme-color color="#cde6c7">
-                <div themed class="fit horizontal layout center">
-                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
-                  <h4 class="flex"> 06 Sat </h4>
-                  <span> 20:45 </span>
-                </div>
-              </theme-color>
-            </div>
-            <div class="date-cover">
-              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Km
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>跑步距离6公里。</span>
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Ca
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>消耗560卡路里。</span>
-            </div>
-          </div>
-          <div class="day-card layout vertical">
-            <div class="date-title">
-              <theme-color color="#cde6c7">
-                <div themed class="fit horizontal layout center">
-                  <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
-                  <h4 class="flex"> 07 Sun </h4>
-                  <span> 20:45 </span>
-                </div>
-              </theme-color>
-            </div>
-            <div class="date-cover">
-              <img class="cover-img" src="/images/fatman/test.jpg" alt="test">
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Kg
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>运动后体重85千克。</span><span> - 0.4 </span>
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Km
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>跑步距离6公里。</span><span> 6'40'' / 每公里</span>
-            </div>
-            <div class="layout horizontal center date-data">
-              <div class="month-icon">
-                <theme-color color="#fff">
-                  <div themed class="fit">
-                    <span>
-                      Ca
-                    </span>
-                  </div>
-                </theme-color>
-              </div>
-              <span>消耗560卡路里。</span>
-            </div>
-          </div>
+          <template is="dom-repeat" items="[[date]]">
+            <day-card date="[[item]]"></day-card>
+          </template>
         </div>
       </div>
     </paper-drawer-panel>
@@ -498,7 +95,39 @@
 
   <script>
     Polymer({
-      is: "dar-timeline"
+      is: "dar-timeline",
+      ready: function() {
+        this.date = [
+          {
+            day: '01',
+            weekAbbr: 'Mon'
+          },
+          {
+            day: '02',
+            weekAbbr: 'Tue'
+          },
+          {
+            day: '03',
+            weekAbbr: 'Wed'
+          },
+          {
+            day: '04',
+            weekAbbr: 'Thu'
+          },
+          {
+            day: '05',
+            weekAbbr: 'Fri'
+          },
+          {
+            day: '06',
+            weekAbbr: 'Sat'
+          },
+          {
+            day: '07',
+            weekAbbr: 'Sun'
+          }
+        ]
+      }
     });
   </script>
 
