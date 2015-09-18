@@ -1,0 +1,159 @@
+<link rel="import" href="/components/polymer/polymer.html" />
+<link rel="import" href="/components/iron-icons/iron-icons.html" />
+<link rel="import" href="/components/paper-styles/paper-styles.html" />
+<link rel="import" href="/components/paper-drawer-panel/paper-drawer-panel.html" />
+<link rel="import" href="/components/paper-scroll-header-panel/paper-scroll-header-panel.html" />
+<link rel="import" href="/elements/cap-header/cap-header.html" />
+<link rel="import" href="/elements/months-nav/months-nav.html" />
+<link rel="import" href="/elements/month-title/month-title.html" />
+<link rel="import" href="/elements/profile-card/profile-card.html" />
+<link rel="import" href="/elements/day-cards/day-cards.html" />
+
+<dom-module id="fatman-darmody">
+  <style>
+    #container {
+      background: #fafafa;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 24px;
+    }
+
+    #fatman [main] {
+      background-color: var(--google-grey-100);
+      border-left: 1px solid var(--google-grey-300);
+    }
+
+  </style>
+
+  <template>
+    <paper-drawer-panel id="fatman">
+
+      <paper-scroll-header-panel drawer>
+        <profile-card class="flex" avatar="Darmody.jpg" name="Darmody" ></profile-card>
+        <months-nav year="2015"></months-nav>
+      </paper-scroll-header-panel>
+
+      <div id="container" class="fit" main>
+        <month-title month="January" count="15"></month-title>
+        <day-cards days="[[days]]"></day-cards>
+      </div>
+
+    </paper-drawer-panel>
+  </template>
+
+  <script>
+    Polymer({
+      is: "fatman-darmody",
+      ready: function() {
+        this.days = [
+          {
+            date: {
+              day: '01',
+              weekAbbr: 'Mon',
+              todayCover: 'test.jpg',
+              time: '20:48'
+            },
+            aboutToday: {
+              cover: 'test.jpg',
+              data: [
+                { indicator: "Km", value: "跑步距离6公里。" },
+                { indicator: "Ca", value: "消耗560卡路里。" }
+              ]
+            }
+          },
+          {
+            date: {
+              day: '02',
+              weekAbbr: 'Tue',
+              todayCover: 'test.jpg',
+              time: '20:48'
+            },
+            aboutToday: {
+              cover: 'test.jpg',
+              data: [
+                { indicator: "Km", value: "跑步距离6公里。" },
+                { indicator: "Ca", value: "消耗560卡路里。" }
+              ]
+            }
+          },
+          {
+            date: {
+              day: '03',
+              weekAbbr: 'Wed',
+              todayCover: 'test.jpg',
+              time: '20:48'
+            },
+            aboutToday: {
+              cover: 'test.jpg',
+              data: [
+                { indicator: "Km", value: "跑步距离6公里。" },
+                { indicator: "Ca", value: "消耗560卡路里。" }
+              ]
+            }
+          },
+          {
+            date: {
+              day: '04',
+              weekAbbr: 'Thu',
+              todayCover: 'test.jpg',
+              time: '20:48'
+            },
+            aboutToday: {
+              cover: 'test.jpg',
+              data: [
+                { indicator: "Km", value: "跑步距离6公里。" },
+                { indicator: "Ca", value: "消耗560卡路里。" }
+              ]
+            }
+          },
+          {
+            date: {
+              day: '05',
+              weekAbbr: 'Fri',
+              todayCover: 'test.jpg',
+              time: '20:48'
+            },
+            aboutToday: {
+              cover: 'test.jpg',
+              data: [
+                { indicator: "Km", value: "跑步距离6公里。" },
+                { indicator: "Ca", value: "消耗560卡路里。" }
+              ]
+            }
+          },
+          {
+            date: {
+              day: '06',
+              weekAbbr: 'Sat',
+              todayCover: 'test.jpg',
+              time: '20:48'
+            },
+            aboutToday: {
+              cover: 'test.jpg',
+              data: [
+                { indicator: "Km", value: "跑步距离6公里。" },
+                { indicator: "Ca", value: "消耗560卡路里。" }
+              ]
+            }
+          },
+          {
+            date: {
+              day: '07',
+              weekAbbr: 'Sun',
+              todayCover: 'test.jpg',
+              time: '20:48'
+            },
+            aboutToday: {
+              cover: 'test.jpg',
+              data: [
+                { indicator: "Km", value: "跑步距离6公里。" },
+                { indicator: "Ca", value: "消耗560卡路里。" }
+              ]
+            }
+          }
+        ]
+      }
+    });
+  </script>
+
+</dom-module>

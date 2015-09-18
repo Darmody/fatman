@@ -1,0 +1,37 @@
+<link rel="import" href="/components/polymer/polymer.html" />
+<link rel="import" href="/components/paper-styles/paper-styles.html" />
+
+<dom-module id="day-cover">
+  <style>
+    :host {
+      position: relative;
+      border-bottom: 1px solid;
+      border-color: #e0e0e0;
+    }
+
+    .cover {
+      padding: 2px;
+      box-sizing: border-box;
+      margin: 6px;
+      width: calc(100% - 12px);
+      height: auto;
+    }
+
+  </style>
+
+  <template>
+    <img class="cover" src="[[coverUrl(cover)]]" alt="[[cover]]">
+  </template>
+
+  <script>
+    Polymer({
+      properties: {
+        cover: String
+      },
+
+      coverUrl: function(cover) {
+        return "/images/fatman/" + cover;
+      }
+    });
+  </script>
+</dom-module>

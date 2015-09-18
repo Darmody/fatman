@@ -1,0 +1,57 @@
+<link rel="import" href="/components/polymer/polymer.html" />
+<link rel="import" href="/components/paper-styles/paper-styles.html" />
+
+<dom-module id="month-title">
+  <style>
+    .month-title h2 {
+      @apply(--paper-font-title);
+      color: #424242;
+    }
+
+    .month-title .count {
+      color: var(--paper-grey-600);
+    }
+
+    .month-title .count:before {
+      content: "(";
+    }
+
+    .month-title .count:after {
+      content: ")";
+    }
+
+    .month-title iron-icon, .month-title cart-icon {
+      cursor: pointer;
+      margin-left: 16px;
+    }
+
+    .month-title > [paper-drawer-toggle] {
+      margin: 0 16px 0 0;
+    }
+
+    .month-title {
+      width: 100%;
+      max-width: 920px;
+      margin: 10px auto;
+    }
+  </style>
+
+  <template>
+    <div class="month-title horizontal layout center">
+      <iron-icon icon="menu" paper-drawer-toggle></iron-icon>
+      <h2 class="flex">
+        <span>[[month]]</span> <span class="count">[[count]]</span>
+      </h2>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: "month-title",
+      properties: {
+        month: String,
+        count: Number
+      }
+    });
+  </script>
+</dom-module>

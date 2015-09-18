@@ -1,0 +1,37 @@
+<link rel="import" href="/components/polymer/polymer.html" />
+<link rel="import" href="/components/paper-styles/paper-styles.html" />
+<link rel="import" href="/elements/day-card/day-card.html" />
+
+<dom-module id="day-cards" >
+  <style>
+    :host {
+      width: 100%;
+      max-width: 920px;
+      margin: 10px auto;
+    }
+
+    [size=xs] :host,
+    [size=s] :host,
+    [size=m] :host {
+      width: 100%;
+      margin: 0;
+    }
+  </style>
+
+  <template>
+    <div id="day-cards" class="horizontal layout wrap">
+      <template is="dom-repeat" items="[[days]]">
+        <day-card date="[[item.date]]" about-today="[[item.aboutToday]]"></day-card>
+      </template>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: "day-cards",
+      properties: {
+        days: Array
+      }
+    });
+  </script>
+</dom-module>

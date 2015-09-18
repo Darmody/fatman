@@ -1,0 +1,49 @@
+<link rel="import" href="/components/polymer/polymer.html" />
+<link rel="import" href="/components/paper-styles/paper-styles.html" />
+<link rel="import" href="/elements/theme-color/theme-color.html" />
+
+<dom-module id="day-title" >
+  <style>
+    :host {
+      height: 60px;
+      display: block;
+      position: relative;
+    }
+
+    .time {
+      margin-right: 15px;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .title {
+      margin-left: 15px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .calendar-icon {
+      margin-left: 15px;
+    }
+  </style>
+
+  <template>
+    <theme-color color="#cde6c7">
+      <div themed class="fit horizontal layout center">
+        <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
+        <h4 class="title flex">[[title]]</h4>
+        <span class="time">[[time]]</span>
+      </div>
+    </theme-color>
+  </template>
+
+  <script>
+    Polymer({
+      is: "day-title",
+      properties: {
+        title: String,
+        time: String
+      }
+    });
+  </script>
+</dom-module>
