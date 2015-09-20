@@ -1,0 +1,62 @@
+[
+  {
+    "name": "January",
+    "abbr": "Ja",
+    "color": "#cde6c7"
+  },
+  {
+    "name": "February",
+    "abbr": "Fe",
+    "color": "#84bf96"
+  },
+  {
+    "name": "March",
+    "abbr": "Mr",
+    "color": "#81c784"
+  },
+  {
+    "name": "April",
+    "abbr": "Ap",
+    "color": "#45b97c"
+  },
+  {
+    "name": "May",
+    "abbr": "Ma",
+    "color": "#b2d235"
+  },
+  {
+    "name": "June",
+    "abbr": "Ju",
+    "color": "#cbc547"
+  },
+  {
+    "name": "July",
+    "abbr": "Jl",
+    "color": "#decb00"
+  },
+  {
+    "name": "August",
+    "abbr": "Au",
+    "color": "#ffd400"
+  },
+  {
+    "name": "September",
+    "abbr": "Sp",
+    "color": "#ffc20e"
+  },
+  {
+    "name": "October",
+    "abbr": "Ot",
+    "color": "#afdfe4"
+  },
+  {
+    "name": "November",
+    "abbr": "No",
+    "color": "#00a6ac"
+  },
+  {
+    "name": "December",
+    "abbr": "De",
+    "color": "#145b7d"
+  }
+]

@@ -36,7 +36,8 @@
 
   <template>
     <div class="layout vertical">
-      <day-title title="[[dateTitle(date)]]" time="[[date.time]]"></day-title>
+      <day-title title="[[dateTitle(date)]]" time="[[date.time]]"
+        color="[[color]]"></day-title>
       <day-cover cover="[[aboutToday.cover]]"></day-cover>
       <day-detail>
         <template is="dom-repeat" items="[[aboutToday.data]]">
@@ -53,7 +54,8 @@
       is: "day-card",
       properties: {
         date: Object,
-        aboutToday: Object
+        aboutToday: Object,
+        color: String
       },
 
       dateTitle: function(date) {

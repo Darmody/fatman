@@ -18,6 +18,8 @@ var publ1c = function(){
     .pipe(gulp.dest('./public/styles/'))
   gulp.src('./images/**')
     .pipe(gulp.dest('./public/images/'))
+  gulp.src('./data/**')
+    .pipe(gulp.dest('./public/data/'))
 };
 
 gulp.task('dev', function () {

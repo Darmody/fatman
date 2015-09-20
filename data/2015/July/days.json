@@ -1,0 +1,23 @@
+[
+  {
+    "date": {
+      "day": "01",
+      "weekAbbr": "Mon",
+      "todayCover": "test.jpg",
+      "time": "20:48"
+    },
+    "aboutToday": {
+      "cover": "test.jpg",
+       "data": [
+        {
+          "indicator": "Km",
+          "value": "跑步距离6公里。"
+        },
+        {
+          "indicator": "Ca",
+          "value": "消耗560卡路里。"
+        }
+       ]
+    }
+  }
+]

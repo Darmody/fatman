@@ -28,7 +28,7 @@
   </style>
 
   <template>
-    <theme-color color="#cde6c7">
+    <theme-color color="[[color]]">
       <div themed class="fit horizontal layout center">
         <iron-icon icon="perm-contact-calendar" class="calendar-icon"></iron-icon>
         <h4 class="title flex">[[title]]</h4>
@@ -42,7 +42,8 @@
       is: "day-title",
       properties: {
         title: String,
-        time: String
+        time: String,
+        color: String
       }
     });
   </script>
